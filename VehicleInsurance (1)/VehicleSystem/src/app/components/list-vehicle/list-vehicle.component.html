@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle List</title>
+</head>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <ul class="navbar-nav">
+      <li class="nav-item"> 
+        <a routerLink="add-vehicle" routerLinkActive="active" class="nav-link">Add Vehicle</a>
+      </li>
+      </ul>
+    </nav>
+    <body>
+      <div class="table-container">
+        <table class="table ">
+      <thead>
+          <tr>
+              <th>id</th>
+              <th>category</th>
+              <th>plateNumber</th>
+              <th>manufacturer</th>
+              <th>type</th>
+              <th>registrationDate</th>
+              <th>premiumAmount</th>
+              <th>nextPreDate</th>
+              <th>previousPreDate</th>
+              <th>pendingFines</th>
+              <th>Action</th>
+          </tr>
+  
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicle of vehicle">
+              <td>{{vehicle.id}}</td>
+              <td>{{vehicle.category}}</td>
+              <td>{{vehicle.plateNumber}}</td>
+              <td>{{vehicle.manufacturer}}</td>
+              <td>{{vehicle.type}}</td>
+              <td>{{vehicle.registrationDate}}</td>
+              <td>{{vehicle.premiumAmount}}</td>
+              <td>{{vehicle.nextPreDate}}</td>
+              <td>{{vehicle.previousPreDate}}</td>
+              <td>{{vehicle.pendingFines}}</td>
+              
+              <td>
+                  <button (click)="updateVehicle(vehicle.id)" class="btn">📝</button>
+                  <button (click)="deleteVehicle(vehicle.id)" class="btn">🗑️</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  </div>
+  
+  </body>
+  </html>

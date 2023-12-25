@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert = "fragments::pageHeader">
+<meta charset="ISO-8859-1">
+
+<title>Vehicle Insurance Management System</title>
+
+</head>
+<body>
+	<div th:fragment="menu">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+				<a routerLink="/home" class="nav-link">Home</a>
+				<a routerLink="/user-account" class="nav-link">User Account</a>
+				<div class="dropdown">
+				  <a routerLink="/list-vehicle" routerLinkActive="active" *ngIf="!showListVehicle" class="nav-link">List Vehicle</a>
+				  <a routerLink="/add-vehicle" routerLinkActive="active" *ngIf="!showAddVehicle" class="nav-link">Add Vehicle</a>
+				  <a routerLink="/update-vehicle" routerLinkActive="active" *ngIf="!showUpdateVehicle" class="nav-link">Update Vehicle</a>
+				  <a (click)="toggleDropdown()" class="nav-link">Vehicle</a>
+				</div>
+				<div class="dropdown">
+					<a routerLink="/add-insurance" routerLinkActive="active" *ngIf="!showAddInsurance" class="nav-link">Add Insurance</a>
+					<a routerLink="/list-insurance" routerLinkActive="active" *ngIf="!showListInsurance" class="nav-link">List Insurance</a>
+					<a routerLink="/update-insurance" routerLinkActive="active" *ngIf="!showUpdateInsurance" class="nav-link">Update Insurance</a>
+					<a (click)="toggleDropdown1()" class="nav-link">Insurance</a>
+				</div>
+				<div class="dropdown">
+					<a routerLink="/add-user-account" routerLinkActive="active" *ngIf="!showAddUser" class="nav-link">Add User</a>
+					<a routerLink="/list-user" routerLinkActive="active" *ngIf="!showListUser" class="nav-link">List User</a>
+					<a routerLink="/update-user" routerLinkActive="active" *ngIf="!showUpdateUser" class="nav-link">Update User</a>
+					<a (click)="toggleDropdown2()" class="nav-link">User</a>
+				</div>
+				<a routerLink="/login" class="nav-link">Login</a>
+				<a routerLink="/registration" class="nav-link">Sign Up</a>
+				<a routerLink="/Aboutus" class="nav-link">About Us</a>
+
+			</nav>
+			  
+		</header>
+	</div>
+	<div th:fragment="pageFooter">
+		<footer class="footer">
+			<div class="container">
+				<span class="text-warning text-upercase"><marquee style = "font-size: 25px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Vehicle Insurance Provides You The Secure Life.</marquee></span>
+			</div>
+		</footer>
+	</div>
+	
+
+<div th:replace="fragments::menu"> </div>
+
+
+	<div>
+			<div id="carouselExampleIndicators" class="carousel slide"
+				data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0"
+						class="active"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img class="d-block w-100 img-fluid" style="height: 615px;"
+							src="https://thumbs.dreamstime.com/b/man-demonstrating-image-auto-dark-background-closeup-car-insurance-182007564.jpg" alt="First slide">
+						<div class="carousel-caption d-none d-md-block">
+							<h1 class="text-dark">
+								<strong>Vehicle Insurance</strong>
+							</h1>
+							<p class="text-dark">
+								<b>Just Buy The Vehicle Take The Insurance Make Family
+									Happy....</b>
+							</p>
+						</div>
+					</div>
+					
+		
+					
+				</div>
+				
+			</div>
+		</div>
+		
+	
+	<div th:replace="fragments::pageFooter"></div>
+	
+</body>
+</html>

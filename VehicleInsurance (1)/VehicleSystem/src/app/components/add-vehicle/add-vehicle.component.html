@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Vehicle</title>
+</head>
+<body>
+<div class="form-container">
+  <h2 class="i"> Add Vehicle!</h2>
+<form (ngSubmit) = "onSubmit()">
+  <div class="form-group">
+      <label>id</label>
+      <input type="text" class="form-control" id="id"[(ngModel)]="vehicle.id" name="id">
+  </div><br>
+  <div class="form-group">
+      <label>category</label>
+      <input type="text" class="form-control" id="category"[(ngModel)]="vehicle.category" name="category">
+  </div><br>
+  <div class="form-group">
+      <label>plateNumber</label>
+      <input type="text" class="form-control" placeholder="plateNumber" id="plateNumber"[(ngModel)]="vehicle.plateNumber" name="plateNumber">
+  </div><br>
+  <div class="form-group">
+	<label>manufacturer</label>
+	<input type="text" class="form-control" id="manufacturer"[(ngModel)]="vehicle.manufacturer" name="manufacturer">
+</div><br>
+<div class="form-group">
+	<label>type</label>
+	<input type="text" class="form-control" id="type"[(ngModel)]="vehicle.type" name="type">
+</div><br>
+<div class="form-group">
+	<label>registrationDate</label>
+	<input type="text" class="form-control" id="registrationDate"[(ngModel)]="vehicle.registrationDate" name="registrationDate">
+</div><br>
+<div class="form-group">
+	<label>premiumAmount</label>
+	<input type="text" class="form-control" id="premiumAmount"[(ngModel)]="vehicle.premiumAmount" name="premiumAmount">
+</div><br>
+<div class="form-group">
+	<label>nextPreDate</label>
+	<input type="text" class="form-control" id="nextPreDate"[(ngModel)]="vehicle.nextPreDate" name="nextPreDate">
+</div><br>
+<div class="form-group">
+	<label>previousPreDate</label>
+	<input type="text" class="form-control" id="previousPreDate"[(ngModel)]="vehicle.previousPreDate" name="previousPreDate">
+</div><br>
+<div class="form-group">
+	<label>pendingFines</label>
+	<input type="text" class="form-control" id="pendingFines"[(ngModel)]="vehicle.pendingFines" name="pendingFines">
+</div><br>
+
+  
+  
+  <br>
+  <button class ="btn btn-danger" type ="submit">Submit</button>
+  
+
+</form>
+</div>
+</body>
+</html>

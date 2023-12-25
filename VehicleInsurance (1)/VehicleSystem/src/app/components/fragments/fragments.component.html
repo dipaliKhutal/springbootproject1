@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="pageHeader">
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Vehicle Insurance Management System</title>
+<!--Bootstrap CSS-->
+
+<link rel="stylesheet" href="D:\javafullstack\Angular\VehicleSystem\static\css\bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+ <!--Bootstrap JS-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">	</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+<style>
+.footer {
+	background-color: black;
+	text-align: justify;
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+<div th:fragment="menu">
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+			<img src="data:image/jpeg;base64,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" alt="Vehicle insurance makes your life happy" style="height: 50px; width: auto; margin-right: 10px;">
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+					<a class="nav-link text-light" th:href="@{/}">Home<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link text-light" th:href="@{/user/userAccount}">Account</a>
+					<li class="nav-item"><a class="nav-link text-light" th:href="@{/getUsers}">User List</a>
+					</li>
+				
+				<li class="nav-item">
+					<div class="dropdown">
+						<button class="btn btn-dark dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Vehicle</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" th:href="@{/vehicleForm}">Add Vehicle</a>
+							<a class="dropdown-item" th:href="@{/getVehicles}">Vehicle List</a>
+						</div>
+					</div>
+				</li>
+				
+				<li class="nav-item">
+					<div class="dropdown">
+						<button class="btn btn-dark dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Insurance</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" th:href="@{/insuranceForm}">Add Insurance</a>
+							<a class="dropdown-item" th:href="@{/getInsurances}">Insurance List</a>
+						</div>
+					</div>
+				</li>
+				</ul>
+					 <ul class="nav navbar-nav navbar-right">
+				      <li sec:authorize="!isAuthenticated()">
+				      <a class="nav-link text-light" th:href="@{/registration}"><span class="glyphicon glyphicon-user">Sign Up</span></a>
+				      </li>
+				    <li sec:authorize="!isAuthenticated()" class="nav-item">
+				            <a class="btn nav-link text-light" th:href="@{/login}"><span class="glyphicon glyphicon-log-in">Login</span></a>
+				        </li>
+				        <li sec:authorize="isAuthenticated()" class="nav-item dropdown">
+				            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+				               aria-haspopup="true" aria-expanded="false" sec:authentication="name">
+				            </a>
+				            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				                <a class="pl-3 btn btn-info" th:href="@{/profile}">Profile</a>
+				                <div class="dropdown-divider"></div>
+				                <a class="pl-3 btn btn-warning" th:href="@{/logout}">Logout</a>
+				            </div>
+				        </li>
+				    </ul>
+
+				
+			</div>
+		</nav>
+
+	</header>
+</div>
+<div th:fragment="pageFooter">
+	<footer class="footer">
+		<div class="container">
+			<span class="text-warning text-upercase"><marquee style = "font-size: 25px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Vehicle Insurance Management System.</marquee></span>
+		</div>
+	</footer>
+</div>
+</body>
+</html>
